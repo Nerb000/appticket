@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'HomeScreen.dart';
 
 class Welcome extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class Welcome extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            'images/wl.jpg',
+            'assets/wl.jpg',
             fit: BoxFit.fill,
             height: double.infinity,
             width: double.infinity,
@@ -75,7 +75,7 @@ class Welcome extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Home()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>HomeScreen()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
