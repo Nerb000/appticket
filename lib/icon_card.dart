@@ -16,7 +16,7 @@ class IconCard extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.red[50],
                   borderRadius: BorderRadius.circular(10)),
-              child: IconButton(icon: Icon(iconData, size: 30,color: Colors.pink[400],), onPressed: (){},)),
+              child: IconButton(icon: Icon(iconData, size: 30,color: Colors.pink[400],), onPressed: (){ print('This');},)),
           Text(text, style: TextStyle(fontSize: 10),)
         ],
       ),

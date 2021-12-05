@@ -11,6 +11,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Map<String, String>> popular = [
+    {'img': 'assets/surigao.jpg', "name": 'Falls', "city": 'Surigao'},
+    {'img': 'assets/panas.jpg', "name": 'Panas', "city": 'New Corella'},
+    {'img': 'assets/bagio.jpg', "name": 'Lake', "city": 'Bagio'},
+    {'img': 'assets/boracay.jpg', "name": 'Boracay', "city": 'Aklan'},
+    {'img': 'assets/bukinon.jpg', "name": 'Bukid', "city": 'Bukidnon'},
     {'img': 'assets/rain.jpg', "name": 'Rain Forest', "city": 'Costa Rica'},
     {'img': 'assets/img2.jpg', "name": 'Lake Louise', "city": 'Canada'},
     {'img': 'assets/pli.jpg', "name": 'Plitivice Lakes', "city": 'Croatia'},
@@ -19,12 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
     {'img': 'assets/pyr.jpg', "name": 'Pyramids', "city": 'Edypt'},
     {'img': 'assets/img33.jpg', "name": 'island', "city": 'scandinavia'},
     {'img': 'assets/biza.jpg', "name": 'Biza Tower', "city": 'Italy'},
-    {'img': 'assets/surigao.jpg', "name": 'Falls', "city": 'Surigao'},
-    {'img': 'assets/samal.jpg', "name": 'Samal Island', "city": 'Davao'},
-    {'img': 'assets/boracay.jpg', "name": 'Boracay', "city": 'Aklan'},
-    {'img': 'assets/bukinon.jpg', "name": 'Bukid', "city": 'Bukidnon'},
-    {'img': 'assets/bagio.jpg', "name": 'Lake', "city": 'Bagio'},
-    {'img': 'assets/panas.jpg', "name": 'Panas', "city": 'New Corella'},
   ];
   final List<String> imgList = [
   'https://icmar.vmcjpi.org/wp-content/uploads/2020/04/Bukidnon-980x415.jpg',
@@ -76,33 +75,12 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 40,
-                  width: MediaQuery.of(context).size.width,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey[300],
-                      hintText: 'Search here...',
-                      contentPadding: EdgeInsets.symmetric(vertical: 9),
-                    ),
-                  ),
-                ),
+              children: [ 
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  'Explore the world\nwith us!',
+                  'Explore the world\nthat we are living Today!',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 30,
@@ -114,26 +92,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextButton(
-                      child: Text('New',style: TextStyle(color: Colors.black, fontSize: 17),),
-                      onPressed:(){ print('New button pressed');}
-                      
-                    ),
+                    
                     TextButton(
                       child: Text('Popular',style: TextStyle(color: Colors.red, fontSize: 17),),
                       onPressed:(){ print('Popular button pressed');}
                       
-                    ),
-                    TextButton(
-                      child: Text('Most Viewed',style: TextStyle(color: Colors.black, fontSize: 17),),
-                      onPressed:(){ print('Most Viewed button pressed');}
-                      
-                    ),
-                    TextButton(
-                      child: Text('All places',style: TextStyle(color: Colors.black, fontSize: 17),),
-                      onPressed:(){ print('All places button pressed');}
-                      
-                    ),
+                    ),         
                   ],
                 ),
                 SizedBox(
@@ -144,11 +108,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.vertical,
                   physics: ScrollPhysics(),
                   crossAxisCount: 4,
-                  itemCount: popular.length,
+                  itemCount: popular.length, 
                   itemBuilder: (BuildContext context, int index) => Stack(
-                    children: [
+                    children: [ 
                       ClipRRect(
-                        child: Image.asset(popular[index]['img']),
+                        child: Image.asset(popular [index]['img'],),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       Positioned(
@@ -172,6 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 15,
                               ),
                             ),
+                            
                           ],
                         ),
                       )
