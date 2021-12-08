@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:staggeredgridview/detail.dart';
 import 'package:staggeredgridview/icon_card.dart';
+import 'package:staggeredgridview/main.dart';
+import 'package:staggeredgridview/welcome.dart';
 import 'CarouselWithDotsPage.dart';
 
 
 class HomeScreen extends StatefulWidget {
+  
   @override
   _HomeScreenState createState() => _HomeScreenState();
+  
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -30,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   'https://gttp.imgix.net/225480/x/0/?auto=format%2Ccompress&fit=crop&crop=faces%2Cedges%2Ccenter&bg=%23fff&ixlib=react-8.6.4&h=797&q=35&dpr=1',
   'https://morganmagazine.files.wordpress.com/2017/05/samal-island.jpg?w=723',
 ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,7 +102,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextButton(
                       child: Text('Popular',style: TextStyle(color: Colors.red, fontSize: 17),),
                       onPressed:(){ print('Popular button pressed');}
-                      
                     ),         
                   ],
                 ),
@@ -110,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 4,
                   itemCount: popular.length, 
                   itemBuilder: (BuildContext context, int index) => Stack(
-                    children: [ 
+                    children: <Widget> [ 
                       ClipRRect(
                         child: Image.asset(popular [index]['img'],),
                         borderRadius: BorderRadius.circular(10),
@@ -118,26 +123,51 @@ class _HomeScreenState extends State<HomeScreen> {
                       Positioned(
                         bottom: 5,
                         left: 10,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              popular[index]['name'],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                        child: GestureDetector( onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (_)=>DetailPage()));
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                popular[index]['name'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
                               ),
-                            ),
-                            Text(
-                              popular[index]['city'],
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
+                              Text(
+                                popular[index]['city'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
                               ),
-                            ),
-                            
-                          ],
+                              
+                            ],
+                          );
+                        },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                popular[index]['name'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ),
+                              Text(
+                                popular[index]['city'],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              
+                            ],
+                          ),
                         ),
                       )
                     ],
