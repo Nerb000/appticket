@@ -68,9 +68,9 @@ class _CarouselWithDotsPageState extends State<CarouselWithDotsPage> {
         Padding(
           padding: EdgeInsets.all(20),
           child: Text(
-            "Recomendations, There's more!!!",
+            "Try our Recomendations, There's more!!!",
             style: TextStyle(
-              color: Colors.green[700],
+              color: Colors.blueGrey[700],
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),

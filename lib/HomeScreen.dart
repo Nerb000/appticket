@@ -19,12 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
     {'img': 'assets/surigao.jpg', "name": 'Falls', "city": 'Surigao'},
     {'img': 'assets/panas.jpg', "name": 'Panas', "city": 'New Corella'},
     {'img': 'assets/bagio.jpg', "name": 'Lake', "city": 'Bagio'},
+    {'img': 'assets/pli.jpg', "name": 'Plitivice Lakes', "city": 'Croatia'},
+    {'img': 'assets/skydu.jpg', "name": 'Dubai', "city": 'UAE'},
     {'img': 'assets/boracay.jpg', "name": 'Boracay', "city": 'Aklan'},
     {'img': 'assets/bukinon.jpg', "name": 'Bukid', "city": 'Bukidnon'},
     {'img': 'assets/rain.jpg', "name": 'Rain Forest', "city": 'Costa Rica'},
     {'img': 'assets/img2.jpg', "name": 'Lake Louise', "city": 'Canada'},
-    {'img': 'assets/pli.jpg', "name": 'Plitivice Lakes', "city": 'Croatia'},
-    {'img': 'assets/skydu.jpg', "name": 'Dubai', "city": 'UAE'},
     {'img': 'assets/img3.jpg', "name": 'Effil Tower', "city": 'Paris'},
     {'img': 'assets/pyr.jpg', "name": 'Pyramids', "city": 'Edypt'},
     {'img': 'assets/img33.jpg', "name": 'island', "city": 'scandinavia'},
@@ -42,19 +42,21 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.lightBlueAccent,
         leading: Icon(
           Icons.menu,
           color: Colors.black, 
         ),
         actions: [
           Container(
-            
-            padding: EdgeInsets.all(10),
-            height: 40,
-            child: Image.asset('assets/pp.jpg'),
-            
+        padding: EdgeInsets.symmetric(horizontal:2),
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color:Theme.of (context).primaryColor,
+          borderRadius: BorderRadius.circular(8),
           ),
+        child: Image.asset('assets/pp.jpg', width:36), 
+      ),
         ],
       ),
       body: ListView(
@@ -95,16 +97,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    
-                    TextButton(
-                      child: Text('Popular',style: TextStyle(color: Colors.red, fontSize: 17),),
-                      onPressed:(){ print('Popular button pressed');}
-                    ),         
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     TextButton(
+                //       child: Text('Popular',style: TextStyle(color: Colors.blueGrey[700], fontSize: 17),),
+                //       onPressed:(){ print('Popular button pressed');}
+                //     ),         
+                //   ],
+                // ),
                 SizedBox(
                   height: 20,
                 ),
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget> [ 
                       ClipRRect(
                         child: Image.asset(popular [index]['img'],),
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10),  
                       ),
                       Positioned(
                         bottom: 5,
@@ -143,7 +144,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 15,
                                 ),
                               ),
-                              
                             ],
                           );
                         },
