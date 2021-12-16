@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:staggeredgridview/detail.dart';
+import 'package:staggeredgridview/widget/detail.dart';
 import 'package:staggeredgridview/icon_card.dart';
 import 'package:staggeredgridview/main.dart';
 import 'package:staggeredgridview/welcome.dart';
