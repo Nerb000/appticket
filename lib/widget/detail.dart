@@ -515,8 +515,8 @@ class TicketInfoItems {
 List<TicketInfoItems> items = [
   TicketInfoItems("DATE", "JUN 18"),
   TicketInfoItems("TIME", "16:40"),
-  TicketInfoItems("CINEMA", "AMC Metreon 16"),
-  TicketInfoItems("QUANT 2", "2 Tickets"),
+  TicketInfoItems("_____", "______"),
+  TicketInfoItems("Buy 2", "Tickets"),
 ];
 
 class TicketInfoItem extends StatelessWidget {
