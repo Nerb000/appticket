@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               w: w,
                               onTap: () {
                                 DatabaseReference _testRef = FirebaseDatabase.instance.reference().child("test");
-                                _testRef.set("Ticket${Random().nextInt(100)}"); 
+                                _testRef.set("Sold${Random().nextInt(100)}"); 
                                 setState(() {
                                   tapButton == 0
                                       ? tapButton = 1
