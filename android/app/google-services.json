@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191257233035",
+    "project_id": "nerbticketapp",
+    "storage_bucket": "nerbticketapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191257233035:android:0809b3f5ae486dc4bbf68e",
+        "android_client_info": {
+          "package_name": "com.hesham.staggeredgridview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191257233035-0erk5fhvc54irlm33ribplb6k4u4pi2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOv4z-DfCiZeTG-o_utqmQPMMHPe10EFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191257233035-0erk5fhvc54irlm33ribplb6k4u4pi2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
