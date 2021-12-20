@@ -3,10 +3,9 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'model.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 
 class DetailPage extends StatelessWidget {
-
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +20,12 @@ class DetailPage extends StatelessWidget {
  class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
+  
 }
+
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  
+
   AnimationController ctrl;
   AnimationController progressCtrl;
   Animation<double> animation;
@@ -42,7 +45,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
     ctrl =
         AnimationController(vsync: this, duration: Duration(milliseconds: 360));
 
@@ -61,7 +63,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       });
     });
   }
-
   String btnTitle = "Buy Ticket";
 
   @override
@@ -238,6 +239,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             child: BottomButton(
                               w: w,
                               onTap: () {
+                                DatabaseReference _testRef = FirebaseDatabase.instance.reference().child("test");
+                                _testRef.set("Ticket${Random().nextInt(100)}"); 
                                 setState(() {
                                   tapButton == 0
                                       ? tapButton = 1
@@ -332,6 +335,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 }
+
 class EmptySeatPopArrow extends StatelessWidget {
   final double w;
   final int tapBtn;
@@ -516,7 +520,7 @@ List<TicketInfoItems> items = [
   TicketInfoItems("DATE", "_____"),
   TicketInfoItems("TIME", "_____"),
   TicketInfoItems("PLACE", "_____"),
-  TicketInfoItems("Buy 1", "Ticket"),
+  TicketInfoItems("TICKET ", "Buy 1"),
 ];
 
 class TicketInfoItem extends StatelessWidget {
