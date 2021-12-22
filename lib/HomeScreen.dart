@@ -5,7 +5,7 @@ import 'package:staggeredgridview/icon_card.dart';
 import 'package:staggeredgridview/main.dart';
 import 'package:staggeredgridview/welcome.dart';
 import 'CarouselWithDotsPage.dart';
-
+import 'package:staggeredgridview/welcome/welcome_page.dart';
 
 class HomeScreen extends StatefulWidget {
   
@@ -48,15 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.black, 
         ),
         actions: [
-          Container(
-        padding: EdgeInsets.symmetric(horizontal:2),
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color:Theme.of (context).primaryColor,
-          borderRadius: BorderRadius.circular(8),
-          ),
-        child: Image.asset('assets/pp.jpg', width:36), 
-      ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              children: [
+                GestureDetector (child: Image.asset('assets/pp.jpg', width:36), onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>WelcomePage()));},),
+              ],
+            ),
+          )
+
         ],
       ),
       body: ListView(
